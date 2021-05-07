@@ -16,6 +16,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <receiver
+            android:name=".RestartOverchargeDetectionService"
+            android:enabled="true"
+            android:exported="false"></receiver>
+
+        <service
+            android:name=".OverchargeDetectionService"
+            android:enabled="true"
+            android:exported="false" />
     </application>
 
 </manifest>
