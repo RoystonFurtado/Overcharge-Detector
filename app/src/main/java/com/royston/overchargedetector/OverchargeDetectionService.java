@@ -24,7 +24,7 @@ public class OverchargeDetectionService extends Service {
         super.onStartCommand(intent,flags,startId);
         Log.d("OverchargeDetectionService.class","Service Started");
         IntentFilter intentFilter=new IntentFilter(Intent.ACTION_BATTERY_CHANGED);
-        if(flag==0) {
+        if(flag==0){
             registerReceiver(fullyChargedReceiver, intentFilter);
             flag=1;
         }
@@ -53,9 +53,6 @@ public class OverchargeDetectionService extends Service {
         }
         Intent restartService=new Intent(this,RestartOverchargeDetectionService.class);
         sendBroadcast(restartService);
-    }
-
-    public OverchargeDetectionService() {
     }
 
     @Override
